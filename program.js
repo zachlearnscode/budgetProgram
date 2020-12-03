@@ -72,6 +72,24 @@ class Budget {
 
     this.actualExpenses += amount;
   }
+
+  resetBudget() {
+    this.plannedIncome = 0;
+    this.plannedExpenses = 0;
+    this.actualExpenses = 0;
+    this.categories = [
+      new Category("savings"),
+      new Category("housing"),
+      new Category("transportation"),
+      new Category("food"),
+      new Category("personal"),
+      new Category("lifestyle"),
+      new Category("health"),
+      new Category("insurance"),
+      new Category("debt"),
+      new Category("giving")
+    ]
+  }
 }
 
 class Category {
@@ -108,6 +126,9 @@ program.createBudget(dec_2021);
 dec_2021.addIncome(1200);
 dec_2021.planExpense("housing", "rent", 550);
 dec_2021.logExpense(550, "rent", "rent", "housing");
+dec_2021.planExpense("personal", "clothing", 33);
+dec_2021.logExpense(21.50, "MajRThrift", "clothing", "personal");
+dec_2021.resetBudget()
 
 //console.log(dec_2021);
 
